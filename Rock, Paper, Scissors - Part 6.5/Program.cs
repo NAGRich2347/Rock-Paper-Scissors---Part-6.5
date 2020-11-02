@@ -6,25 +6,39 @@ namespace Rock__Paper__Scissors___Part_6._5
     {
         static void Main(string[] args)
         {
-            int rock = 1;
-            int paper = 2;
-            int scissors = 3;
-            round_num = 0;
-            int user_choice = 0;
+            int num1;
+            string rock;
 
-            Random r = new Random();
-            int genRand = r.Next();
-            
-            Console.WriteLine("Welcome, to Rock, Paper, Scissors!");
-            Console.WriteLine("Press any key to continue...");
-            Console.WriteLine("How many rounds would you like to play?");
-            round_num = Convert.ToInt32(Console.ReadLine());
-            
-            
+            int num2;
+            string paper;
 
-            Console.WriteLine("Please enter 1 for rock, 2 for paper, or 3 for scissors.");
-            
-            user_choice = Convert.ToInt32(Console.ReadLine());
+            int num3;
+            string scissors;
+
+            int user_choice;
+
+
+
+            bool keepPlaying = true;
+            while (keepPlaying)
+            {
+                //Game Logic
+                Console.WriteLine("Would you like to start a new game? <Y or N>");
+                ConsoleKeyInfo cki = Console.ReadKey().ToUpper();
+                keepPlaying = cki.KeyChar == 'y, Y';
+
+                //Reads User Input
+                Console.WriteLine("Please enter 1 for rock, 2 for paper, or 3 for scissors.");
+                user_choice = Convert.ToInt32(Console.ReadLine());
+
+                //Calculates Random Computer Selection
+                Random ComputerChoice = new Random();
+                int genRand = ComputerChoice.Next(1, 4);
+
+                return ComputerChoice;
+
+                }
+            }
             ;
         }
     }
